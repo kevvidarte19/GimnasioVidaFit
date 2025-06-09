@@ -22,6 +22,7 @@ public class InscribirService {
 
         //Validaciones
         ValidarSocio(bean.getIdSocio());
+        validarSocioActivo(bean.getIdSocio());
         ValidarClase(bean.getIdClase());
         ValidarCapacidad(bean);
         //Procesos
@@ -81,6 +82,18 @@ public class InscribirService {
         if(cont==0){
             throw new RuntimeException("Socio " + idSocio + " no existe.");
 
+        }
+    }
+
+    private void validarSocioActivo(int idSocio) {
+        String sql = """
+                SELECT COUNT(1) cont FROM Socio s 
+                INNER JOIN EstadoSocio es ON s.IDEstadoSocio = es.IDEstadoSocio
+                WHERE s.IDSocio = ? AND es.descripcion = 'Activo'
+                """;
+        int cont = jdbcTemplate.queryForObject(sql, Integer.class, idSocio);
+        if (cont == 0) {
+            throw new RuntimeException("ERROR: El socio no está activo.");
         }
     }
 }

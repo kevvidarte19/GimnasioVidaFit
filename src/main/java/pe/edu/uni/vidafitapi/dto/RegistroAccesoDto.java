@@ -11,7 +11,7 @@ import lombok.*;
 public class RegistroAccesoDto {
 
     private int idSocio;
-    private int idRegistradoPor; //ID del empleado que registra
+    private int idRegistradoPor; //ID del personal que registra
     private String fechaEntrada;
 
     //Campos adicionales para el reporte

@@ -31,7 +31,7 @@ public class RegistroAccesoService {
         String sql = "INSERT INTO RegistroAcceso(IDSocio, IDRegistradoPor, fechaEntrada) VALUES(?, ?, GETDATE())";
         jdbcTemplate.update(sql, dto.getIdSocio(), dto.getIdRegistradoPor());
 
-        // Obtener datos del socio para la respuesta
+        // Obtener datos del socio para el reporte
         sql = """
             SELECT s.nombre + ' ' + s.apellido as nombreCompleto,
                    em.descripcion as estadoMembresia,

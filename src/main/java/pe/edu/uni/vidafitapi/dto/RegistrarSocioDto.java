@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 public class RegistrarSocioDto {
 
-    // Datos del socio
+    //Datos del socio
     private int idSocio;
     private String nombre;
     private String apellido;
@@ -19,13 +19,13 @@ public class RegistrarSocioDto {
     private String correo;
     private String telefono;
 
-    // Información de suscripción
+    //Información de suscripción
     private int idMembresia;
     private int idRegistradoPor;
-    // Fechas (
+    //Fechas
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
 
-    // Mensaje de respuesta
+    //Mensaje de respuesta
     private String mensaje;
 }

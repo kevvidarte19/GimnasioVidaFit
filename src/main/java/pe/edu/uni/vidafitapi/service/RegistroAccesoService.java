@@ -116,9 +116,9 @@ public class RegistroAccesoService {
         }
     }
 
-    private void validarPersonal(int idEmpleado) {
+    private void validarPersonal(int idPersonal) {
         String sql = "SELECT COUNT(1) cont FROM Personal WHERE IDPersonal = ?";
-        int cont = jdbcTemplate.queryForObject(sql, Integer.class, idEmpleado);
+        int cont = jdbcTemplate.queryForObject(sql, Integer.class, idPersonal);
         if (cont == 0) {
             throw new RuntimeException("ERROR: El personal no existe.");
         }

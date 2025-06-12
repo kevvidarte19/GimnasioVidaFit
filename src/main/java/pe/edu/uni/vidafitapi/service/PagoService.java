@@ -78,7 +78,7 @@ public class PagoService {
         String sql = "SELECT COUNT(1) cont FROM Suscripcion WHERE IDSuscripcion = ? AND activa = 1";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idSuscripcion);
         if ( cont == 0) {
-            throw new RuntimeException("ERROR: La suscripción no está activa para procesar el pago.");
+            throw new RuntimeException("ERROR: La suscripción no existe o no está activa para procesar el pago.");
         }
     }
 

@@ -1,7 +1,6 @@
 package pe.edu.uni.vidafitapi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -136,7 +135,7 @@ public class RegistrarSocioService {
                 "WHERE m.IDMembresia = ? AND em.descripcion = 'Activa'";
         Integer cont = jdbcTemplate.queryForObject(sql, Integer.class, idMembresia);
         if (cont == null || cont == 0) {
-            throw new RuntimeException("ERROR: La membresía no existe.");
+            throw new RuntimeException("ERROR: La membresía no existe o esta inactiva.");
         }
     }
     private LocalDate calcularFechaFin(int idMembresia) {

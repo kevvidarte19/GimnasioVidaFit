@@ -97,7 +97,7 @@ public class RegistroAccesoService {
     }
 
     //Validaciones
-    private void validarSocio(int idSocio) {
+    public void validarSocio(int idSocio) {
         String sql = "SELECT COUNT(1) cont FROM Socio WHERE IDSocio = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idSocio);
         if (cont == 0) {
@@ -116,7 +116,7 @@ public class RegistroAccesoService {
         }
     }
 
-    private void validarPersonal(int idPersonal) {
+    public void validarPersonal(int idPersonal) {
         String sql = "SELECT COUNT(1) cont FROM Personal WHERE IDPersonal = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idPersonal);
         if (cont == 0) {
@@ -124,7 +124,7 @@ public class RegistroAccesoService {
         }
     }
 
-    private void validarMembresiaActiva(int idSocio) {
+    public void validarMembresiaActiva(int idSocio) {
         String sql = """
             SELECT COUNT(1) cont FROM Suscripcion su
             INNER JOIN Membresia m ON su.IDMembresia = m.IDMembresia

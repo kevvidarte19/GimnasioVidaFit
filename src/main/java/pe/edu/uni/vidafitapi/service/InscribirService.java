@@ -58,7 +58,7 @@ public class InscribirService {
         return bean;
     }
 
-    private void ValidarCapacidad(InscribirDto bean) {
+    public void ValidarCapacidad(InscribirDto bean) {
         String sql="select capacidad from Clase where IDClase=?";
         int capacidad = jdbcTemplate.queryForObject(sql, Integer.class, bean.getIdClase());
         if(capacidad==0){
@@ -68,7 +68,7 @@ public class InscribirService {
         }
     }
 
-    private void ValidarClase(int idClase) {
+    public void ValidarClase(int idClase) {
         String sql="select count(1) cont from Clase where IDClase=?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idClase);
         if(cont==0){
@@ -76,7 +76,7 @@ public class InscribirService {
         }
     }
 
-    private void ValidarSocio(int idSocio) {
+    public void ValidarSocio(int idSocio) {
         String sql="select count(1) cont from Socio where IDSocio=?";
         int cont= jdbcTemplate.queryForObject(sql, Integer.class,idSocio);
         if(cont==0){
@@ -85,7 +85,7 @@ public class InscribirService {
         }
     }
 
-    private void validarSocioActivo(int idSocio) {
+    public void validarSocioActivo(int idSocio) {
         String sql = """
                 SELECT COUNT(1) cont FROM Socio s 
                 INNER JOIN EstadoSocio es ON s.IDEstadoSocio = es.IDEstadoSocio

@@ -53,12 +53,14 @@ public class RegistrarSocioService {
 
         //Completar DTO para la respuesta
         dto.setIdSocio(idSocioFinal);
+        dto.setFechaInicio(fechaInicio);
+        dto.setFechaFin(fechaFin);
         dto.setMensaje("Socio con ID " + idSocioFinal + " ha sido registrado exitosamente.");
         return dto;
     }
 
     //MÉTODOS PRIVADOS DE LÓGICA Y VALIDACIÓN
-    private void validarIdSocioDisponible(int idSocio) {
+    public void validarIdSocioDisponible(int idSocio) {
         String sql = "SELECT COUNT(1) FROM Socio WHERE IDSocio = ?";
         int count = jdbcTemplate.queryForObject(sql, Integer.class, idSocio);
         if (count > 0) {
@@ -115,21 +117,21 @@ public class RegistrarSocioService {
             throw new RuntimeException("ERROR: Datos incompletos. Verifique todos los campos requeridos.");
         }
     }
-    private void validarPersonal(int idPersonal) {
+    public void validarPersonal(int idPersonal) {
         String sql = "SELECT COUNT(1) cont FROM Personal WHERE IDPersonal = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idPersonal);
         if (cont == 0) {
             throw new RuntimeException("ERROR: El personal con ID " + idPersonal + " no existe.");
         }
     }
-    private void validarDniUnico(String dni) {
+    public void validarDniUnico(String dni) {
         String sql = "SELECT COUNT(1) cont FROM Socio WHERE dni = ?";
         Integer cont = jdbcTemplate.queryForObject(sql, Integer.class, dni);
         if (cont != null && cont > 0) {
             throw new RuntimeException("ERROR: El DNI " + dni + " ya está registrado.");
         }
     }
-    private void validarMembresia(int idMembresia) {
+    public void validarMembresia(int idMembresia) {
         String sql = "SELECT COUNT(1) cont FROM Membresia m " +
                 "JOIN EstadoMembresia em ON m.IDEstadoMembresia = em.IDEstadoMembresia " +
                 "WHERE m.IDMembresia = ? AND em.descripcion = 'Activa'";

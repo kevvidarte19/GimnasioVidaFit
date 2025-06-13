@@ -57,7 +57,7 @@ public class PagoService {
     }
     //MÉTODOS DE VALIDACIÓN Y OBTENCIÓN DE DATOS
     //Validacion de Pago
-    private void validarPagoExistenteParaSuscripcion(int idSuscripcion) {
+    public void validarPagoExistenteParaSuscripcion(int idSuscripcion) {
         String sql = "SELECT COUNT(1) cont FROM Pago WHERE IDSuscripcion = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idSuscripcion);
         if (cont > 0) {
@@ -74,7 +74,7 @@ public class PagoService {
         }
     }
 
-    private void validarSuscripcionExisteYActiva(int idSuscripcion) {
+    public void validarSuscripcionExisteYActiva(int idSuscripcion) {
         String sql = "SELECT COUNT(1) cont FROM Suscripcion WHERE IDSuscripcion = ? AND activa = 1";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idSuscripcion);
         if ( cont == 0) {
@@ -82,7 +82,7 @@ public class PagoService {
         }
     }
 
-    private void validarMontoPago(int idSuscripcion, double montoRecibido) {
+    public void validarMontoPago(int idSuscripcion, double montoRecibido) {
         String sql = "SELECT m.precio FROM Suscripcion s " +
                 "JOIN Membresia m ON s.IDMembresia = m.IDMembresia " +
                 "WHERE s.IDSuscripcion = ? AND s.activa = 1";
@@ -112,7 +112,7 @@ public class PagoService {
         }
     }
 
-    private void validarMetodoPagoExiste(int idMetodo) {
+    public void validarMetodoPagoExiste(int idMetodo) {
         String sql = "SELECT COUNT(1) cont FROM MetodoPago WHERE IDMetodoPago = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idMetodo);
         if ( cont == 0) {
@@ -120,7 +120,7 @@ public class PagoService {
         }
     }
 
-    private void validarPersonalExiste(int idPersonal) {
+    public void validarPersonalExiste(int idPersonal) {
         String sql = "SELECT COUNT(1) cont FROM Personal WHERE IDPersonal = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idPersonal);
         if ( cont == 0) {

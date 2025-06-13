@@ -23,4 +23,43 @@ public class RegistrarSocioRest {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
+    @GetMapping("/validar/dni/{dni}")
+    public ResponseEntity<String> validarDni(@PathVariable String dni) {
+        try {
+            registrarSocioService.validarDniUnico(dni);
+            return ResponseEntity.ok("El DNI " + dni + " está disponible.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/validar/membresia/{id}")
+    public ResponseEntity<String> validarMembresia(@PathVariable int id) {
+        try {
+            registrarSocioService.validarMembresia(id);
+            return ResponseEntity.ok("La membresía con ID " + id + " es válida y está activa.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/validar/personal/{id}")
+    public ResponseEntity<String> validarPersonal(@PathVariable int id) {
+        try {
+            registrarSocioService.validarPersonal(id);
+            return ResponseEntity.ok("El personal con ID " + id + " existe.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/validar/socio-id/{id}")
+    public ResponseEntity<String> validarIdSocioDisponible(@PathVariable int id) {
+        try {
+            registrarSocioService.validarIdSocioDisponible(id);
+            return ResponseEntity.ok("El ID de socio " + id + " está disponible.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
 }

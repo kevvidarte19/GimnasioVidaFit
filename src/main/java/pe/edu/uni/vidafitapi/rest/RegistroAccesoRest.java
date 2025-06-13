@@ -70,4 +70,34 @@ public class RegistroAccesoRest {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
+
+    @GetMapping("/validar/socio/{idSocio}")
+    public ResponseEntity<String> validarSocio(@PathVariable int idSocio) {
+        try {
+            registroAccesoService.validarSocio(idSocio);
+            return ResponseEntity.ok("El socio con ID " + idSocio + " existe y está activo.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/validar/personal/{idPersonal}")
+    public ResponseEntity<String> validarPersonal(@PathVariable int idPersonal) {
+        try {
+            registroAccesoService.validarPersonal(idPersonal);
+            return ResponseEntity.ok("El personal con ID " + idPersonal + " existe.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/validar/membresia/{idSocio}")
+    public ResponseEntity<String> validarMembresia(@PathVariable int idSocio) {
+        try {
+            registroAccesoService.validarMembresiaActiva(idSocio);
+            return ResponseEntity.ok("El socio con ID " + idSocio + " tiene una membresía activa y vigente.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
 }

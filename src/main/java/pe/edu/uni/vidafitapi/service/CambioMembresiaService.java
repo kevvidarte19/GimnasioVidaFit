@@ -48,6 +48,7 @@ public class CambioMembresiaService {
         sql = "SELECT duracionMeses FROM Membresia WHERE IDMembresia = ?";
         int duracionMeses = jdbcTemplate.queryForObject(sql, Integer.class, dto.getIdNuevaMembresia());
 
+
         //Proceso
         //Paso 1:Desactivar suscripción actual
         sql = """
@@ -76,7 +77,7 @@ public class CambioMembresiaService {
     }
 
     //Validamos de que el socio exista
-    private void validarSocioExiste(int idSocio) {
+    public void validarSocioExiste(int idSocio) {
         String sql = "SELECT COUNT(1) cont FROM Socio WHERE IDSocio = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idSocio);
         if (cont == 0) {
@@ -85,7 +86,7 @@ public class CambioMembresiaService {
     }
 
     //Validamos que la nueva membresia exista
-    private void validarNuevaMembresiaExiste(int idMembresia) {
+    public void validarNuevaMembresiaExiste(int idMembresia) {
         String sql = "SELECT COUNT(1) cont FROM Membresia WHERE IDMembresia = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idMembresia);
         if (cont == 0) {
@@ -94,7 +95,7 @@ public class CambioMembresiaService {
     }
 
     //Validamos que no sea la misma membresia cuando el socio elija
-    private void validarNoEsLaMismaMembresia(CambioMembresiaDto dto) {
+    public void validarNoEsLaMismaMembresia(CambioMembresiaDto dto) {
         String sql = """
                 SELECT COUNT(1) cont FROM Suscripcion 
                 WHERE IDSocio = ? AND IDMembresia = ? AND activa = 1
@@ -107,7 +108,7 @@ public class CambioMembresiaService {
     }
 
     //Validamos de que si el socio exista también tiene que estar activo
-    private void validarSocioEstaActivo(int idSocio) {
+    public void validarSocioEstaActivo(int idSocio) {
         String sql = """
                 SELECT COUNT(1) cont FROM Socio s 
                 INNER JOIN EstadoSocio es ON s.IDEstadoSocio = es.IDEstadoSocio
@@ -120,7 +121,7 @@ public class CambioMembresiaService {
     }
 
     //Validamos que si la membresia exista tambien tiene que estar activa
-    private void validarNuevaMembresiaDisponible(int idMembresia) {
+    public void validarNuevaMembresiaDisponible(int idMembresia) {
         String sql = """
                 SELECT COUNT(1) cont FROM Membresia m 
                 INNER JOIN EstadoMembresia em ON m.IDEstadoMembresia = em.IDEstadoMembresia
@@ -133,7 +134,7 @@ public class CambioMembresiaService {
     }
 
     //Validamos que el personal exista para que registre la suscripcion
-    private void validarPersonalExiste(int idPersonal) {
+    public void validarPersonalExiste(int idPersonal) {
         String sql = "SELECT COUNT(1) cont FROM Personal WHERE IDPersonal = ?";
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idPersonal);
         if (cont == 0) {

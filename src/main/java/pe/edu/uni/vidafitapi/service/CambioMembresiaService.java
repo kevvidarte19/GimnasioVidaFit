@@ -129,7 +129,7 @@ public class CambioMembresiaService {
                 """;
         int cont = jdbcTemplate.queryForObject(sql, Integer.class, idMembresia);
         if (cont == 0) {
-            throw new RuntimeException("ERROR: La membresía no está disponible.");
+            throw new RuntimeException("ERROR: La membresía con ID 4 no está activa.");
         }
     }
 

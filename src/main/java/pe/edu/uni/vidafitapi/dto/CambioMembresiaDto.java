@@ -14,7 +14,6 @@ public class CambioMembresiaDto {
     private int idSocio;
     private int idNuevaMembresia;
     private int idPersonal; // Personal que autoriza el cambio
-    private String fecha;
     private double precioAnterior;
     private double precioNuevo;
     private String tipoMembresiaAnterior;

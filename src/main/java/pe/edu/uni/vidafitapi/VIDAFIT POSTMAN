@@ -1,0 +1,1010 @@
+{
+	"info": {
+		"_postman_id": "d40234e1-56eb-4c7f-9f3b-280e795e8259",
+		"name": "GimnasioVidaFit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45630733"
+	},
+	"item": [
+		{
+			"name": "RegistrarSocio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 11,\r\n   \"nombre\": \"Kevin\",\r\n    \"apellido\": \"Vidarte\",\r\n    \"dni\": \"73655804\",\r\n    \"correo\": \"kevvidarte@gmail.com\",\r\n    \"telefono\": \"999266188\",\r\n    \"idMembresia\": 1,\r\n    \"idRegistradoPor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/socios/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"socios",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarDNI",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"nombre\": \"Niccola\",\r\n    \"apellido\": \"Coronel\",\r\n    \"dni\": \"6789012423224231232\",\r\n    \"correo\": \"nicolla.@gmail.com\",\r\n    \"telefono\": \"992345675\",\r\n    \"idMembresia\": 1,\r\n    \"idRegistradoPor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/socios/validar/dni/67890123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"socios",
+						"validar",
+						"dni",
+						"67890123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarMembresia",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"nombre\": \"Niccola\",\r\n    \"apellido\": \"Coronel\",\r\n    \"dni\": \"6789012423224231232\",\r\n    \"correo\": \"nicolla.@gmail.com\",\r\n    \"telefono\": \"992345675\",\r\n    \"idMembresia\": 1,\r\n    \"idRegistradoPor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/socios/validar/membresia/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"socios",
+						"validar",
+						"membresia",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarPersonal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"nombre\": \"Niccola\",\r\n    \"apellido\": \"Coronel\",\r\n    \"dni\": \"6789012423224231232\",\r\n    \"correo\": \"nicolla.@gmail.com\",\r\n    \"telefono\": \"992345675\",\r\n    \"idMembresia\": 1,\r\n    \"idRegistradoPor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/socios/validar/personal/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"socios",
+						"validar",
+						"personal",
+						"150"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarIDSocioDisponible",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"nombre\": \"Niccola\",\r\n    \"apellido\": \"Coronel\",\r\n    \"dni\": \"6789012423224231232\",\r\n    \"correo\": \"nicolla.@gmail.com\",\r\n    \"telefono\": \"992345675\",\r\n    \"idMembresia\": 1,\r\n    \"idRegistradoPor\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/socios/validar/socio-id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"socios",
+						"validar",
+						"socio-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistrarAcceso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 6,\r\n    \"idRegistradoPor\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarSocio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 13,\r\n    \"idRegistradoPor\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/validar/socio/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"validar",
+						"socio",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarPersonal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 13,\r\n    \"idRegistradoPor\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/validar/personal/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"validar",
+						"personal",
+						"150"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarSocioMembresiaActiva",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 13,\r\n    \"idRegistradoPor\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/validar/membresia/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"validar",
+						"membresia",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccesoSocioHoy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/socio/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"socio",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistroAccesoDiario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/diario?fecha=2025-06-13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"diario"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2025-06-13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EstadisticaAccesoDiario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/acceso/estadisticas?fecha=2025-06-13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acceso",
+						"estadisticas"
+					],
+					"query": [
+						{
+							"key": "fecha",
+							"value": "2025-06-13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InscribirClase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 1,\r\n    \"idClase\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/consultar/inscribir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"consultar",
+						"inscribir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarSocio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 16,\r\n    \"idClase\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/consultar/validar/socio/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"consultar",
+						"validar",
+						"socio",
+						"150"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarEstadoSocio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 16,\r\n    \"idClase\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/consultar/validar/socio-activo/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"consultar",
+						"validar",
+						"socio-activo",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarClase",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 16,\r\n    \"idClase\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/consultar/validar/clase/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"consultar",
+						"validar",
+						"clase",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarCapacidadClase",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": 16,\r\n    \"idClase\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/consultar/validar/capacidad-clase/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"consultar",
+						"validar",
+						"capacidad-clase",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CambiarMembresia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"5\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/membresia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"membresia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarSocio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"2\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/validar/socio-existe/150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"validar",
+						"socio-existe",
+						"150"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarEstadoSocio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"2\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/validar/socio-activo/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"validar",
+						"socio-activo",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarPersonal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"2\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/validar/personal-existe/666",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"validar",
+						"personal-existe",
+						"666"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarMembresia",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"2\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/validar/membresia-existe/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"validar",
+						"membresia-existe",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarMembresiaActiva",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"2\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/validar/membresia-disponible/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"validar",
+						"membresia-disponible",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarMembresiaNuevaDiferente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSocio\": \"1\",\r\n    \"idNuevaMembresia\": \"2\",\r\n    \"idPersonal\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/procesos/validar/no-misma-membresia/socio/1/membresia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"procesos",
+						"validar",
+						"no-misma-membresia",
+						"socio",
+						"1",
+						"membresia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PagoSuscripcion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSuscripcion\": 6,\r\n    \"idMetodoPago\": 3,\r\n    \"idPersonal\": 1,\r\n    \"monto\": 550.00  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pago/suscripcion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pago",
+						"suscripcion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarSuscripción",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSuscripcion\": 6,\r\n    \"idMetodoPago\": 3,\r\n    \"idPersonal\": 1,\r\n    \"monto\": 550.00  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pago/validar/suscripcion/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pago",
+						"validar",
+						"suscripcion",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarPersonal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSuscripcion\": 6,\r\n    \"idMetodoPago\": 3,\r\n    \"idPersonal\": 1,\r\n    \"monto\": 550.00  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pago/validar/personal/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pago",
+						"validar",
+						"personal",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarMetodoPago",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSuscripcion\": 6,\r\n    \"idMetodoPago\": 3,\r\n    \"idPersonal\": 1,\r\n    \"monto\": 550.00  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pago/validar/metodopago/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pago",
+						"validar",
+						"metodopago",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarPagoExistente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSuscripcion\": 6,\r\n    \"idMetodoPago\": 3,\r\n    \"idPersonal\": 1,\r\n    \"monto\": 550.00  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pago/validar/pago-existente/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pago",
+						"validar",
+						"pago-existente",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ValidarMontoPago",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSuscripcion\": 6,\r\n    \"idMetodoPago\": 3,\r\n    \"idPersonal\": 1,\r\n    \"monto\": 550.00  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pago/validar/monto/6/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pago",
+						"validar",
+						"monto",
+						"6",
+						"45"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
